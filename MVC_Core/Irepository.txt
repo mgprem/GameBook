@@ -1,0 +1,6 @@
+Endpoint=sb://mobilerecharge1.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=oKZmXfC6c4xJPEVBSVHo8ThO/MaIOHlEPwUkh61oCVo=
+https://www.c-sharpcorner.com/article/how-to-connect-mysql-with-asp-net-core/
+IRepository pattern
+https://www.youtube.com/watch?v=qJmEI2LtXIY
+https://www.c-sharpcorner.com/article/entity-framework-core-a-code-first-approach/
+https://www.youtube.com/watch?v=G14lmWS-h4k

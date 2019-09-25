@@ -1,0 +1,297 @@
+﻿@model IEnumerable<LHBOL.Gamebooks>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Territory GB</h2>
+
+
+    <p id="msg"></p>
+<table class="table">
+    <tr>
+        <td>
+            <a asp-action="Create">Create New</a>
+
+        </td>
+        <td>
+            <button id="btnFilter" class="btn btn-secondary my-2 my-sm-0" type="button">
+                Filter
+            </button>
+        </td>
+        <td>
+            <input class="mr-sm-2" type="text" id="txtSearch" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="button" id="btnSearch">Search</button>
+        </td>
+        <td>
+            @{
+                double TotalPages = ViewBag.TotalPages;
+            }
+            @for (int i = 1; i <= TotalPages; i++)
+            {
+                @*<a>@i</a>*@
+                if (i == ViewBag.Page)
+                {
+            <b>
+                @Html.ActionLink(i.ToString() + " ", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder), SortBy = (ViewBag.SortBy == null ? "Id" : ViewBag.SortBy),Page=i })
+            </b>
+                }
+                else
+                {
+                    @Html.ActionLink(i.ToString() + " ", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder), SortBy = (ViewBag.SortBy == null ? "Id" : ViewBag.SortBy),Page=i })
+                }
+            }
+        </td>
+    </tr>
+</table>
+    <p>
+
+        @*<form class="form-inline my-2 my-lg-0">*@
+    @*<div class="class="form-inline my-2 my-lg-0"">
+        <input class="form-control mr-sm-2" type="text" id="txtSearch" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="button" id="btnSearch">Search</button>
+    </div>*@
+            
+        @*</form>*@
+    </p>
+    <div id="GameBookList">
+        @*  @Html.Partial("pv_GameBookList", Model)*@
+        <partial name="pv_GameBookList" for="@Model" />
+    </div>
+        <div class="container">
+            <div class="modal fade" tabindex="-1" id="FilterModal"
+                 data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                ×
+                            </button>
+                            <h4 class="modal-title">Filter</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form  >
+                                @*<div class="form-group">
+                                        <input class="form-control" type="text"
+                                               placeholder="Login Username" id="inputUserName" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Login Password"
+                                               type="password" id="inputPassword" />
+                                    </div>*@
+        <div class="form-group">
+            <h3>Select your favorite sports:</h3>
+            <label><input class="ckb" type="checkbox" id=1 value="football" name="sport"> Football</label><br />
+            <label><input class="ckb" type="checkbox" id=2 value="baseball" name="sport"> Baseball</label><br />
+            <label><input class="ckb" type="checkbox" id=3 value="cricket" name="sport"> Cricket</label><br />
+            <label><input class="ckb" type="checkbox" id=4 value="boxing" name="sport"> Boxing</label><br />
+            <label><input class="ckb" type="checkbox" id=5 value="racing" name="sport"> Racing</label><br />
+            <label><input class="ckb" type="checkbox" id=6 value="swimming" name="sport"> Swimming</label><br />
+            <br>
+            <button type="button" id="getVal">Get Values</button>
+            <p id="checkid"></p>
+        </div>
+        </form>
+    </div>
+                    <div class="modal-footer">
+                        <button type="Submit" id="SubmitFilter" class="btn btn-primary button button4">Sign</button>
+                        @*<button asp-action="AjaxFilter" asp-controller="GameBooks"
+                            data-ajax-begin="return confirm ('Are you sure?')"
+                            data-ajax="true"
+                            data-ajax-method="Post"
+                            data-ajax-mode="replace"
+                            data-ajax-url="onURL"
+                            data-ajax-update="#GameBookList"> Ajax Filter
+                            </button>*@
+                        <button type="button" id="btnHideModal" class="btn btn-primary button button4">
+                            Hide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loading" class="modal">
+        <div class="modal-dialog" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"> Loading...</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="progress progress-stripped active">
+                        <div class="progress-bar" style="width:100%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+//    var onURL = function(context){
+//    alert(context);
+//};
+    //$(document).ready(function () {
+    //    $("#loginModal").modal('hide');
+
+
+
+    //        $("#btnFilter").click(function () {
+    //        $("#loginModal").modal('show');
+    //    }
+    //            $("#btnHideModal").click(function () {
+    //        $("#loginModal").modal('hide');
+    //            }
+    //                });
+    //$(document).ready(function () {
+    //    $("#loginModal").modal('hide');
+    //});
+    //$(document).ready(function() {
+
+    //    $("#btnFilter").click(function () {
+    //        var favorite = [];
+    //          $('#FilterModal').modal('show').on('shown.bs.modal', function () {
+    //              $("#getVal").click(function () {
+    //                  $.each($("input[name='sport']:checked"), function () {
+    //                      favorite.push($(this).val());
+    //                           $("#checkid").html("My favourite sports are: " + favorite.join(", "));
+    //                  });
+    //              });
+
+    //        });
+    //    });
+    //});
+        $(document).ready(function () {
+            $(document).ajaxStart(function () {
+                 //$("#FilterModal").modal('hide');
+                $("#loading").show();
+            });
+            $(document).ajaxStop(function () {
+                $("#loading").hide();
+               
+            });
+        });
+
+            $(document).ready(function() {
+
+        $("#btnFilter").click(function () {
+            var favorite = [];
+              $('#FilterModal').modal('show').on('btnFilter', function () {
+                  $("#getVal").click(function () {
+                      $.each($("input[name='sport']:checked"), function () {
+                          favorite.push($(this).val());
+                               $("#checkid").html("My favourite sports are: " + favorite.join(", "));
+                      });
+                  });
+
+            });
+        });
+    });
+    try {
+
+        $(document).ready(function () {
+
+            $("#SubmitFilter").click(function filter() {
+                 $("#FilterModal").modal('hide');
+                //alert('here');
+                var checkedIds = $("input[name='sport']:checked").map(function () { return this.id });
+                
+                //alert(checkedIds);
+                //alert(checkedIds.toArray());
+
+                   @*$.ajax({
+                   url: '@Url.Action("FilterRecords")',
+                    type: "post",
+                    dataType: "json",
+                    data: '{"grade":"' + checkedIds + '"}',
+                    //data: { grade: gradesSelected},
+                    contentType: 'application/json; charset=utf-8',
+
+                    success: function (data) {
+                        ShowData(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    } });*@
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("FilterRecords","GameBooks")',
+                    traditional: true,
+                    data: { Ids: checkedIds.toArray(), Status: "A" },
+                    success: function (data) {
+                        ShowData(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    }
+                     
+                });
+
+                function ShowData(data) {
+                    $("#GameBookList").html(data);
+                    //var strResponse = "";
+                    //for (var key in data) {
+                    //    strResponse += "<tr>";
+                    //    for (var key1 in data[key]) {
+                    //        strResponse += "<td>" + data[key][key1] + "<td>";
+                    //    }
+                    //    strResponse += "</tr>";
+                    //}
+                    //console.log(strResponse)
+                    //$("tbody").html(strResponse);
+                }
+            });
+                @*$.ajax({
+                    type: "POST",
+                    url: @Url.Action("FilterRecords","GameBooks"),
+                    traditional: true,
+                    data: { Ids: checkedIds.toArray(), Status: "A" },
+                    success: function (data) {
+                        ShowData(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    }
+
+                });
+
+                function successFunc(data, status) {
+                    alert(data);
+                    location.reload();
+                }
+                function errorFunc() {
+                    alert('error');
+                }*@
+            //});
+        });
+        //---------------------------------Search Functionality---------------------------------------
+                $(document).ready(function () {
+
+            $("#btnSearch").click(function filter() {
+                 $("#FilterModal").modal('hide');
+                var SearchString = $("#txtSearch").val();
+                $.ajax({
+                    type: "post",
+                    url: '@Url.Action("SearchRecords","GameBooks")',
+                    traditional: true,
+                    data: {Search: SearchString.toString() },
+                    success: function (data) {
+                        ShowData(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    }
+                });
+
+                function ShowData(data) {
+                    $("#GameBookList").html(data);
+                    console.log(data)
+
+                }
+            });
+        });
+    }
+    catch (e) {
+        throw e;
+    }
+
+    </script>

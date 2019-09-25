@@ -1,0 +1,40 @@
+﻿
+<h1>Welcome to Game Portal</h1>
+
+
+
+<div>
+
+
+    <form asp-controller="GameBooks" asp-action="Index">
+        <button type="submit">
+
+            <h4>Books</h4>
+            ToTal Published Book Count = @ViewBag.BooksPubBooksTotCount
+
+        </button>
+    </form>
+
+    <form asp-controller="GameBooks" asp-action="Index">
+        <button type="submit" >
+
+            <h4>Episodes</h4>
+
+            Total Count of all episode's “Update” = @ViewBag.EpisodeUpdateTotCount <br>
+            Total count of all episodes “In - Review” = @ViewBag.EpisodeReviewTotCount<br />
+            Total count of all published episodes= @ViewBag.EpisodePublishedTotCount<br />
+
+
+        </button>
+    </form>
+
+    <form asp-controller="GameBooks" asp-action="Index">
+        <button type="submit">
+
+            <h4>Users</h4>
+            Total count of all players= @ViewBag.UserPlayerTotCount<br />
+            Total count of all internal users = @ViewBag.UserInternalUserCouunt
+
+        </button>
+    </form>
+</div>

@@ -1,0 +1,203 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBLL\\LHBLL.csproj": {}
+  },
+  "projects": {
+    "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBLL\\LHBLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBLL\\LHBLL.csproj",
+        "projectName": "LHBLL",
+        "projectPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBLL\\LHBLL.csproj",
+        "packagesPath": "C:\\Users\\mgpre\\.nuget\\packages\\",
+        "outputPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mgpre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\LHBOL.csproj": {
+                "projectPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\LHBOL.csproj"
+              },
+              "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHDAL\\LHDAL.csproj": {
+                "projectPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHDAL\\LHDAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\LHBOL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\LHBOL.csproj",
+        "projectName": "LHBOL",
+        "projectPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\LHBOL.csproj",
+        "packagesPath": "C:\\Users\\mgpre\\.nuget\\packages\\",
+        "outputPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mgpre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[0.49.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHDAL\\LHDAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHDAL\\LHDAL.csproj",
+        "projectName": "LHDAL",
+        "projectPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHDAL\\LHDAL.csproj",
+        "packagesPath": "C:\\Users\\mgpre\\.nuget\\packages\\",
+        "outputPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHDAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mgpre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\LHBOL.csproj": {
+                "projectPath": "D:\\NumbersOnlyProject\\MVC_Core\\MVC_Core\\LinkHub\\LHBOL\\LHBOL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.17, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
